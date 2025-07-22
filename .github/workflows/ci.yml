@@ -2,7 +2,8 @@ name: CI & Deploy
 
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   lint:
@@ -17,14 +18,17 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Fix htmlhint permissions
+      - name: Fix HTMLHint permissions
         run: chmod +x ./node_modules/.bin/htmlhint
+
+      - name: Fix Stylelint permissions
+        run: chmod +x ./node_modules/.bin/stylelint
 
       - name: Lint HTML
         run: npx htmlhint "**/*.html"
 
       - name: Lint CSS
-        run: npm run lint:css
+        run: npx stylelint "css/**/*.css"
 
   deploy:
     needs: lint
