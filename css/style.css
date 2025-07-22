@@ -1,5 +1,5 @@
 :root {
-  --color-bg: #ffffff;
+  --color-bg: #fff;
   --color-text: #222;
   --color-primary: #2e3380;
   --color-secondary: #dcacb8;
@@ -30,14 +30,6 @@ body {
   color: var(--color-text);
   line-height: 1.6;
 }
-/* body {
-  font-family: 'Segoe UI', sans-serif;
-  color: #f0f0f0;
-  line-height: 1.6;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('../assets/background1.jpg') no-repeat center center/cover;
-  scroll-behavior: smooth;
-} */
 
 .container {
   max-width: 1140px;
@@ -47,7 +39,7 @@ body {
 
 header {
   background: var(--color-primary);
-  color: white;
+  color: #fff;
   padding: 1rem 0;
 }
 
@@ -68,34 +60,37 @@ nav ul {
 }
 
 nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
 }
 
+/* Hero section com fundo e overlay escuro */
 #hero {
-  /* background: linear-gradient(135deg, var(--color-primary), var(--color-secondary)); */
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-              url('../assets/background2.jpg') no-repeat center center/cover;
-  color: white;
+  background: linear-gradient(
+      rgb(0 0 0 / 70%),
+      rgb(0 0 0 / 70%)
+    ),
+    url('../assets/background2.jpg') no-repeat center center/cover;
+  color: #fff;
   text-align: center;
   padding: 6rem 2rem;
 }
 
 .btn {
-  background: white;
+  background: #fff;
   color: var(--color-primary);
   padding: 0.75rem 1.5rem;
   text-decoration: none;
   border-radius: 5px;
   margin-top: 1rem;
   display: inline-block;
-  transition: 0.3s;
+  transition: var(--transition);
 }
 
 .btn:hover {
   background: var(--color-secondary);
-  color: white;
+  color: #fff;
 }
 
 section {
@@ -113,7 +108,7 @@ section {
   background: var(--color-card);
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgb(0 0 0 / 10%);
   transition: transform 0.3s ease;
 }
 
@@ -134,9 +129,10 @@ form {
   margin-top: 2rem;
 }
 
-form input, form textarea {
+form input,
+form textarea {
   padding: 0.75rem;
-  border: 1px solid #ccc;
+  border: 1px solid rgb(0 0 0 / 10%);
   border-radius: 5px;
   background: var(--color-card);
   color: var(--color-text);
@@ -146,7 +142,7 @@ form button {
   padding: 0.75rem;
   border: none;
   background: var(--color-primary);
-  color: white;
+  color: #fff;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -155,14 +151,15 @@ form button:hover {
   background: var(--color-secondary);
 }
 
+/* Rodapé */
 footer {
   background: var(--color-primary);
-  color: white;
+  color: #fff;
   text-align: center;
   padding: 2rem;
 }
 
-/* Reveal */
+/* Scroll Reveal */
 .reveal {
   opacity: 0;
   transform: translateY(30px);
@@ -172,4 +169,15 @@ footer {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  header .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
