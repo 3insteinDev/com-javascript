@@ -1,19 +1,22 @@
 {
-  "name": "com-javascript",
-  "version": "1.0.0",
-  "description": "site institucional para aplicar conceitos de html, css e javascript.",
-  "main": "index.js",
-  "scripts": {
-    "lint:html": "htmlhint \"**/*.html\"",
-    "lint:css": "stylelint \"css/**/*.css\""
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "htmlhint": "^1.6.3"
-  }
+	"name": "com-javascript",
+	"version": "1.0.0",
+	"description": "site institucional para aplicar conceitos de html, css e javascript.",
+	"main": "index.js",
+	"scripts": {
+		"lint:html": "htmlhint \"**/*.html\"",
+		"lint:css": "stylelint \"css/**/*.css\""
+	},
+	"stylelint": {
+		"extends": "stylelint-config-standard"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"devDependencies": {
+		"htmlhint": "^0.15.0",
+		"stylelint": "^15.0.0",
+		"stylelint-config-standard": "^30.0.1"
+	}
+
 }
